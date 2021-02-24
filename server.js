@@ -1,7 +1,7 @@
-require("dotenv").config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const db = require('./models');
 const PORT = process.env.PORT || 3000;
 
 // initialize express
@@ -18,6 +18,9 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
+
+// db
+db.sync;
 
 // routes
 app.get("/", (req, res) => {
