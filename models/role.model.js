@@ -5,7 +5,9 @@ module.exports = (sequelize, Sequelize) => {
             primaryKey: true
         },
         name: Sequelize.STRING
+    }, {
+        timestamps: false
     });
-    
+
     return Role;
 }
