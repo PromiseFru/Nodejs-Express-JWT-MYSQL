@@ -12,10 +12,10 @@ module.exports = (app) => {
         next();
     });
 
-    app.post("/api/auth/signup", [
-        verifySignup.checkDuplicateUsernameAndEmail,
-        verifySignup.checkRolesExisted
-    ], controllers.signup);
+    app.post("/api/auth/signup",
+        [verifySignup.checkDuplicateUsernameAndEmail, verifySignup.checkRolesExisted],
+        controllers.signup
+    );
 
     app.post("/api/auth/signin", controllers.signin);
 };

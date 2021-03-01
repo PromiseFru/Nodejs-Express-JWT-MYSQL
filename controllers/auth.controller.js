@@ -9,7 +9,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
 try {
-    module.exports = signup = async (req, res) => {
+    signup = async (req, res) => {
         // Save User to Databse
         let user = await User.create({
             username: req.body.username,
@@ -48,7 +48,7 @@ try {
         });
     };
 
-    module.exports = signIn = async (req, res) => {
+    signin = async (req, res) => {
         // look for user
         let user = await User.findOne({
             where: {
@@ -98,4 +98,9 @@ try {
     }
 } catch (e) {
     console.log(e);
+}
+
+module.exports = {
+    signup,
+    signin
 }
