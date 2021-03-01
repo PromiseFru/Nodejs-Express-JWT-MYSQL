@@ -48,6 +48,9 @@ function initial() {
 };
 
 // routes
+require("./routes/auth.routes.js")(app);
+require("./routes/user.routes.js")(app);
+
 app.get("/", (req, res) => {
     res.json({
         message: "Welcome, it's working"
