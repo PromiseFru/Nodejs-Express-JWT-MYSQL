@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 const Role = db.role;
 
 db.sequelize.sync({
-    force: true
+    force: false
 }).then(() => {
     console.log('Drop and Resync Db');
     initial();
