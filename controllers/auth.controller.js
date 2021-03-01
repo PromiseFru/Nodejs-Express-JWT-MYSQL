@@ -9,7 +9,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
 try {
-    module.exports = signip = async (req, res) => {
+    module.exports = signup = async (req, res) => {
         // Save User to Databse
         let user = await User.create({
             username: req.body.username,
