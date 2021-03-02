@@ -29,12 +29,12 @@ isAdmin = async (req, res, next) => {
     let user = await User.findByPk(req.userId);
     let roles = await user.getRoles();
 
-    roles.forEaach((ele, i) => {
+    roles.forEach((ele, i) => {
         if (ele.name === "admin") {
             next();
             return;
         }
-    })
+    });
 
     return res.status(403).send({
         message: "Require Admin Role!"
@@ -45,7 +45,7 @@ isModerator = async (req, res, next) => {
     let user = await User.findByPk(req.userId);
     let roles = await user.getRoles();
 
-    roles.forEaach((ele, i) => {
+    roles.forEach((ele, i) => {
         if (ele.name === "moderator") {
             next();
             return;
@@ -61,7 +61,7 @@ isModeratorOrAdmin = async (req, res, next) => {
     let user = await User.findByPk(req.userId);
     let roles = await user.getRoles();
 
-    roles.forEaach((ele, i) => {
+    roles.forEach((ele, i) => {
         if (ele.name === "admin") {
             next();
             return;
